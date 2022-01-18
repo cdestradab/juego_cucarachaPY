@@ -1,4 +1,4 @@
-sEstrategias de solución:
+Estrategias de solución:
 
 1. Lo primero es diseñar un tablero apropiado.
 
