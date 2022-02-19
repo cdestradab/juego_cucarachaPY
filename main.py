@@ -1,7 +1,23 @@
+import sys
+
+sys.path.append('/control/')
+sys.path.append('/modelo/')
+sys.path.append('/vista/')
+
 import libreria as lib
-import cucaracha as roach
+from vista import vista_tablero as tablero
+from vista import vista_bienvenida as bienvenida
+from vista import vista_inicio as config
 
-roach.mensajeBienvenida()
+#bienvenida.mensajeBienvenida()
 
-valoresConfig = roach.configInicio()
+#valoresConfig = config.configInicio()
+
+cabecera1 = tablero.crearCabecera("LA CUCARACHA", 40)
+print(cabecera1)
+
+
+tablero1 = tablero.crearTablero()
+tablero.impTablero(tablero1)
+
 

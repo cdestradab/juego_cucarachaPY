@@ -4,14 +4,14 @@ import random
 #============================================
 #Funcion ............ : crearMatriz
 #Descripcion ........ : crea matrices
-#Parametros Entrada . : n son las filas, m son las columnas, dato es el valor que tendran todos los elementos de la matriz.
+#Parametros Entrada . : n son las filas, m son las columnas, caracter es el valor que tendran todos los elementos de la matriz.
 #Retorno Salida ..... : una matriz de tamaño n*m con todos los elementos iguales al valor de "dato"
 #============================================
 
-def crearMatriz(n,m, dato):
+def crearMatriz(n,m, caracter):
   matriz = []
   for i in range(n):
-    fila = [dato]*m
+    fila = [caracter]*m
     matriz.append(fila)
   return matriz
 
@@ -68,7 +68,7 @@ def limpiarPantalla():
 
 #============================================
 #Funcion ............ : preguntaContinuar
-#Descripcion ........ : Pregunta al usuario si continuar con el curso del programa, el ususario debe responder según se indica.
+#Descripcion ........ : Pregunta al usuario si continuar con el curso del programa, el usuario debe responder según se indica.
 #Parametros Entrada . : Ninguno
 #Retorno Salida ..... : Booleano
 #============================================
