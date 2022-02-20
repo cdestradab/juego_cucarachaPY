@@ -17,7 +17,5 @@ cabecera1 = tablero.crearCabecera("LA CUCARACHA", 40)
 print(cabecera1)
 
 
-tablero1 = tablero.crearTablero()
-tablero.impTablero(tablero1)
-
-
+cucaracha = tablero.crearTablero()
+tablero.impTablero(cucaracha)

@@ -11,7 +11,9 @@ import random
 def crearMatriz(n,m, caracter):
   matriz = []
   for i in range(n):
-    fila = [caracter]*m
+    fila = []
+    for j in range(m):
+      fila.append([caracter])
     matriz.append(fila)
   return matriz
 
@@ -26,7 +28,7 @@ def impMatriz(matriz):
   for fila in matriz:
     impFila = ""
     for elem in fila:
-      impFila += str(elem)
+      impFila += str(elem[0])
     print(impFila)
 
 #============================================
@@ -39,9 +41,7 @@ def impMatriz(matriz):
 def cambElemMatriz(matriz, valor, *coordenadas):
   nuevaMatriz = matriz
   for coord in coordenadas:
-    n=coord[0]
-    m=coord[1]
-    nuevaMatriz[n][m]=valor
+    nuevaMatriz[coord[0]][coord[1]]=valor
   return nuevaMatriz
 #============================================
 #Funcion ............ : tirarDados
@@ -123,3 +123,12 @@ def inputOpciones(mensajeError, *opciones):
     else: 
       todoOk = preguntaContinuar()
   return valorIngresado
+
+#============================================
+#Funcion ............ : colored
+#Descripcion ........ : Permite dar color a los textos simples
+#Parametros Entrada . : r, g, b, text
+#Retorno Salida ..... : string
+#============================================
+def colored(r, g, b, text):
+    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)

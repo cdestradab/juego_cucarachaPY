@@ -22,12 +22,42 @@ def crearCabecera(titulo, lenghtCabecera):
   
   cabecera = cabecera + "╔" + intCabecera*"═" + "╗" + "\n"
   cabecera = cabecera + "║" + " "*blankCabecera + titulo + " "*(blankCabecera + correctorCabecera) + "║" + "\n"
-  cabecera = cabecera + "╠" + 18*"═" + "╦" + (intCabecera-19)*"═" + "╣"
+  cabecera = cabecera + "╠" + 17*"═" + "╦" + (intCabecera-18)*"═" + "╣"
 
   return cabecera
 
 #============================================
 #Funcion ............ : crearTablero
+#Descripcion ........ : crea un tablero para iniciar el juego de la cucaracha
+#Parametros Entrada . : ninguno
+#Retorno Salida ..... : una matriz de 15*17 con la forma de la cucaracha.
+#============================================
+
+'''
+def crearTablero():
+  tablero = []
+
+  tablero.append()
+
+  "      o     o      "
+  "       \   /       "
+  "  o     o o     o  "
+  "   \     o     /   "
+  "    \  o   o  /    "
+  " o   \__o o__/   o "
+  "  \    /   \    /  "
+  "   \___o   o___/   "
+  "     /     \       "
+  " o———o       o———o "
+  "  \  |       |  /  "
+  "  |   \     /   |  "
+  "  |    \   /    |  "
+  "  o     o o     o  "
+  "         o         "
+  '''
+  
+#============================================
+#Funcion ............ : crearTableroV00
 #Descripcion ........ : crea un tablero para iniciar el juego de la cucaracha
 #Parametros Entrada . : ninguno
 #Retorno Salida ..... : una matriz de 15*17 con la forma de la cucaracha.
@@ -61,5 +91,5 @@ def impTablero(matriz):
   for fila in matriz:
     impFila = "║"
     for elem in fila:
-      impFila += str(elem)
-    print(impFila)
+      impFila += str(elem[0])
+    print(impFila + "║")
