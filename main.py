@@ -19,3 +19,6 @@ print(cabecera1)
 
 cucaracha = tablero.crearTablero()
 tablero.impTablero(cucaracha)
+
+
+#casi que no
