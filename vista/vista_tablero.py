@@ -11,7 +11,7 @@ import libreria as lib
 #Parametros Entrada . : titulo, lenghtCabecera
 #Retorno Salida ..... : cabecera
 #============================================
-def crearCabecera(titulo, lenghtCabecera):
+def CrearCabecera(titulo, lenghtCabecera):
   cabecera = ""
   intCabecera = lenghtCabecera - 2
   blankCabecera = int(((intCabecera/2)-(len(titulo)/2)))
@@ -26,6 +26,21 @@ def crearCabecera(titulo, lenghtCabecera):
 
   return cabecera
 
+#============================================
+#Funcion ............ : CrearPiePagina
+#Descripcion ........ : crea una pie de página para mostrar información al jugador.
+#Parametros Entrada . : info, lenghtPie
+#Retorno Salida ..... : cabecera
+#============================================
+def CrearPiePagina(info, lenghtPie):
+  piePagina = ""
+  intPie = lenghtPie - 2
+  
+  piePagina = piePagina + "╠" + intPie*"═" + "╣" + "\n"
+  piePagina = piePagina + "║ " + lib.AdjustLenght(intPie-1, info, " ") + "║" + "\n"
+  piePagina = piePagina + "╚" + intPie*"═" + "╝"
+
+  return piePagina
   
 #============================================
 #Funcion ............ : crearCucaracha
@@ -34,7 +49,7 @@ def crearCabecera(titulo, lenghtCabecera):
 #Retorno Salida ..... : una matriz de 15*17 con la forma de la cucaracha.
 #============================================
 
-def crearCucaracha():
+def CrearCucaracha():
   tablero = lib.crearMatriz(15,17," ")
 
   # Definir puntos para completar
@@ -58,8 +73,8 @@ def crearCucaracha():
 #Retorno Salida ..... : una matriz con la información que corresponde al turno del jugador.
 #============================================
 
-def crearCuadroInformativo(infoTurno, infoJugador, ultimaTirada, anchoCuadro):
-  prototipo = [" Turno " + str(infoTurno['turno'])," Jugador " + str(infoTurno['jugador']), "" ," Dinero Actual: ", " " + str(infoJugador['montoActual']), "", " Última tirada: ", " [" + str(ultimaTirada[0]) + "] " , " [" + str(ultimaTirada[1]) + "] ", " [" + str(ultimaTirada[2]) + "] ", " [" + str(ultimaTirada[3]) + "] ", " [" + str(ultimaTirada[4]) + "] ", "", ""]
+def CrearCuadroInformativo(infoTurno, infoJugador, ultimaTirada, anchoCuadro):
+  prototipo = [" Turno " + str(infoTurno['turno'])," Jugador " + str(infoTurno['jugador']), "" ," Dinero Actual: ", " " + str(infoJugador['montoActual']), "", " Última tirada: ", "", " [" + str(ultimaTirada[0]) + "] " , " [" + str(ultimaTirada[1]) + "] ", " [" + str(ultimaTirada[2]) + "] ", " [" + str(ultimaTirada[3]) + "] ", " [" + str(ultimaTirada[4]) + "] ", "", ""]
 
   cuadroDefinitivo = []
 
@@ -75,7 +90,7 @@ def crearCuadroInformativo(infoTurno, infoJugador, ultimaTirada, anchoCuadro):
 #Retorno Salida ..... : no retorna nada, muestra en pantalla una matriz en forma de texto (string)
 #============================================
 
-def impTablero(cucaracha, info):
+def PrintTablero(cucaracha, info):
   numFila = 0
   for fila in cucaracha:
     impFila = "║ "
