@@ -132,3 +132,17 @@ def inputOpciones(mensajeError, *opciones):
 #============================================
 def colored(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
+
+#============================================
+#Funcion ............ : AdjustLenght
+#Descripcion ........ : Permite ajustar un string a determinado largo rellenando con un caracter
+#Parametros Entrada . : lenght, char
+#Retorno Salida ..... : string
+#============================================
+def AdjustLenght(lenght, oldString, char):
+  if lenght > len(oldString):
+    diff = lenght - len(oldString)
+    newString = oldString + char*diff
+    return newString
+  else:
+    return oldString[0:lenght]

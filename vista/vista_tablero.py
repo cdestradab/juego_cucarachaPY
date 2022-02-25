@@ -22,48 +22,19 @@ def crearCabecera(titulo, lenghtCabecera):
   
   cabecera = cabecera + "╔" + intCabecera*"═" + "╗" + "\n"
   cabecera = cabecera + "║" + " "*blankCabecera + titulo + " "*(blankCabecera + correctorCabecera) + "║" + "\n"
-  cabecera = cabecera + "╠" + 17*"═" + "╦" + (intCabecera-18)*"═" + "╣"
+  cabecera = cabecera + "╠" + 19*"═" + "╦" + (intCabecera-20)*"═" + "╣"
 
   return cabecera
 
-#============================================
-#Funcion ............ : crearTablero
-#Descripcion ........ : crea un tablero para iniciar el juego de la cucaracha
-#Parametros Entrada . : ninguno
-#Retorno Salida ..... : una matriz de 15*17 con la forma de la cucaracha.
-#============================================
-
-'''
-def crearTablero():
-  tablero = []
-
-  tablero.append()
-
-  "      o     o      "
-  "       \   /       "
-  "  o     o o     o  "
-  "   \     o     /   "
-  "    \  o   o  /    "
-  " o   \__o o__/   o "
-  "  \    /   \    /  "
-  "   \___o   o___/   "
-  "     /     \       "
-  " o———o       o———o "
-  "  \  |       |  /  "
-  "  |   \     /   |  "
-  "  |    \   /    |  "
-  "  o     o o     o  "
-  "         o         "
-  '''
   
 #============================================
-#Funcion ............ : crearTableroV00
+#Funcion ............ : crearCucaracha
 #Descripcion ........ : crea un tablero para iniciar el juego de la cucaracha
 #Parametros Entrada . : ninguno
 #Retorno Salida ..... : una matriz de 15*17 con la forma de la cucaracha.
 #============================================
 
-def crearTablero():
+def crearCucaracha():
   tablero = lib.crearMatriz(15,17," ")
 
   # Definir puntos para completar
@@ -81,15 +52,34 @@ def crearTablero():
   return tablero
 
 #============================================
+#Funcion ............ : crearCuadroInformativo
+#Descripcion ........ : crea una matriz con la que se mostrará luego la información del jugador
+#Parametros Entrada . : no
+#Retorno Salida ..... : una matriz con la información que corresponde al turno del jugador.
+#============================================
+
+def crearCuadroInformativo(infoTurno, infoJugador, ultimaTirada, anchoCuadro):
+  prototipo = [" Turno " + str(infoTurno['turno'])," Jugador " + str(infoTurno['jugador']), "" ," Dinero Actual: ", " " + str(infoJugador['montoActual']), "", " Última tirada: ", " [" + str(ultimaTirada[0]) + "] " , " [" + str(ultimaTirada[1]) + "] ", " [" + str(ultimaTirada[2]) + "] ", " [" + str(ultimaTirada[3]) + "] ", " [" + str(ultimaTirada[4]) + "] ", "", ""]
+
+  cuadroDefinitivo = []
+
+  for linea in prototipo:
+    cuadroDefinitivo.append(lib.AdjustLenght(anchoCuadro, linea, " "))
+  
+  return cuadroDefinitivo
+  
+#============================================
 #Funcion ............ : impTablero
 #Descripcion ........ : imprime matrices en pantalla
 #Parametros Entrada . : "matriz" que es la matriz que la función debe leer
 #Retorno Salida ..... : no retorna nada, muestra en pantalla una matriz en forma de texto (string)
 #============================================
 
-def impTablero(matriz):
-  for fila in matriz:
-    impFila = "║"
+def impTablero(cucaracha, info):
+  numFila = 0
+  for fila in cucaracha:
+    impFila = "║ "
     for elem in fila:
       impFila += str(elem[0])
-    print(impFila + "║")
+    print(impFila + " ║" + info[numFila] + "║")
+    numFila += 1
