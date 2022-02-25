@@ -36,7 +36,7 @@ def CrearPiePagina(info, lenghtPie):
   piePagina = ""
   intPie = lenghtPie - 2
   
-  piePagina = piePagina + "╠" + intPie*"═" + "╣" + "\n"
+  piePagina = piePagina + "╠" + 19*"═" + "╩" + (intPie-20)*"═" + "╣" + "\n"
   piePagina = piePagina + "║ " + lib.AdjustLenght(intPie-1, info, " ") + "║" + "\n"
   piePagina = piePagina + "╚" + intPie*"═" + "╝"
 

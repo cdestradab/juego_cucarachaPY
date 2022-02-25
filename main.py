@@ -14,9 +14,14 @@ infoTurno = {'turno': 0, 'jugador': 0, 'tirada':0}
 infoJugador = {'id': 0, 'montoActual':0, 'puntaje':[0,0,0]}
 ultimaTirada = [0,0,0,0,0]
 
-#bienvenida.mensajeBienvenida()
+# PANTALLA DE BIENVENIDA
 
-#valoresConfig = config.configInicio()
+bienvenida.mensajeBienvenida()
+
+# CONFIGURACION DE JUEGO
+valoresConfig = config.configInicio()
+
+# TABLERO DE PARTIDA
 
 cabecera = tablero.CrearCabecera("LA CUCARACHA", 42)
 print(cabecera)
