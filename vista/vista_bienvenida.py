@@ -36,5 +36,5 @@ def mensajeBienvenida():
   print("================================================")
   print("\n")
   input()
-  lib.limpiarPantalla()
+  lib.LimpiarPantalla()
   return 0

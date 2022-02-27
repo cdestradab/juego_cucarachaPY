@@ -50,7 +50,7 @@ def cambElemMatriz(matriz, valor, *coordenadas):
 #Retorno Salida ..... : arroja una lista con los valores obtenidos
 #============================================
 
-def tirarDados(caras, cantidad):
+def TirarDados(caras, cantidad):
   resultado = []
   for i in range(cantidad):
     resultado.append(random.randint(1,caras))
@@ -62,7 +62,7 @@ def tirarDados(caras, cantidad):
 #Parametros Entrada . : Ninguno
 #Retorno Salida ..... : NInguno
 #============================================
-def limpiarPantalla():
+def LimpiarPantalla():
   os.system('clear')
 
 

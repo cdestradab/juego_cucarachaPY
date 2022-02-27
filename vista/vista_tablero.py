@@ -32,12 +32,13 @@ def CrearCabecera(titulo, lenghtCabecera):
 #Parametros Entrada . : info, lenghtPie
 #Retorno Salida ..... : cabecera
 #============================================
-def CrearPiePagina(info, lenghtPie):
+def CrearPiePagina(info1, info2, lenghtPie):
   piePagina = ""
   intPie = lenghtPie - 2
   
   piePagina = piePagina + "╠" + 19*"═" + "╩" + (intPie-20)*"═" + "╣" + "\n"
-  piePagina = piePagina + "║ " + lib.AdjustLenght(intPie-1, info, " ") + "║" + "\n"
+  piePagina = piePagina + "║ " + lib.AdjustLenght(intPie-1, info1, " ") + "║" + "\n"
+  piePagina = piePagina + "║ " + lib.AdjustLenght(intPie-1, info2, " ") + "║" + "\n"
   piePagina = piePagina + "╚" + intPie*"═" + "╝"
 
   return piePagina
@@ -74,7 +75,7 @@ def CrearCucaracha():
 #============================================
 
 def CrearCuadroInformativo(infoTurno, infoJugador, ultimaTirada, anchoCuadro):
-  prototipo = [" Turno " + str(infoTurno['turno'])," Jugador " + str(infoTurno['jugador']), "" ," Dinero Actual: ", " " + str(infoJugador['montoActual']), "", " Última tirada: ", "", " [" + str(ultimaTirada[0]) + "] " , " [" + str(ultimaTirada[1]) + "] ", " [" + str(ultimaTirada[2]) + "] ", " [" + str(ultimaTirada[3]) + "] ", " [" + str(ultimaTirada[4]) + "] ", "", ""]
+  prototipo = [" Turno " + str(infoTurno['turno'])," Jugador " + str(infoJugador['id']), "" ," Dinero Actual: ", " " + str(infoJugador['montoActual']), "", " Última tirada: ", "", " [" + str(ultimaTirada[0]) + "] " , " [" + str(ultimaTirada[1]) + "] ", " [" + str(ultimaTirada[2]) + "] ", " [" + str(ultimaTirada[3]) + "] ", " [" + str(ultimaTirada[4]) + "] ", "", ""]
 
   cuadroDefinitivo = []
 
@@ -98,3 +99,17 @@ def PrintTablero(cucaracha, info):
       impFila += str(elem[0])
     print(impFila + " ║" + info[numFila] + "║")
     numFila += 1
+
+#============================================
+#Funcion ............ : PrintIU
+#Descripcion ........ : imprime el tablero de juego completo con cabecera, tablero, info y pie de pagina
+#Parametros Entrada . : cabecera, cucaracha, cuadroInformativo, piePagina
+#Retorno Salida ..... : no retorna nada, muestra en pantalla el tablero de juego
+#============================================
+
+def PrintIU(cabecera, cucaracha, cuadroInformativo, piePagina):
+  lib.LimpiarPantalla()
+  
+  print(cabecera)
+  PrintTablero(cucaracha, cuadroInformativo)
+  print(piePagina)

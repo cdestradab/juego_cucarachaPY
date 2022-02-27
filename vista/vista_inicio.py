@@ -45,6 +45,6 @@ def configInicio():
   elif sancion == "b": sancion = int(bote / 10)
   elif sancion == "c": sancion = int(bote / 5)
 
-  lib.limpiarPantalla()
+  lib.LimpiarPantalla()
   
   return [numJ, bote, sancion]
